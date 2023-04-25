@@ -1,0 +1,39 @@
+        {% load static %}
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="/">Головна</a></li>
+						<li><a href="/about">Про сайт</a></li>
+						<li><a href="/catalog">Каталог</a></li>
+						<li><a href="/news">Новини</a></li>
+						<li><a href="/contacts">Контакти</a></li>
+					</ul>
+					<ul class="main-nav nav navbar-nav navbar-right">
+						<li>
+							<a href="" style="margin-right: 75px">
+								Привіт,
+								{% if user.is_authenticated %}
+									{{ user.username }}
+								{% else %}
+									Гість!
+								{% endif %}
+							</a>
+						</li>
+						{% if not user.is_authenticated %}
+							<li><a href="/accounts/sign_in">Вхід</a></li>
+							<li><a href="/accounts/sign_up">Реєстрація</a></li>
+						{% else %}
+							<li><a href="/accounts/sign_out">Вихід</a></li>
+							<li><a href="/accounts/profile">Профіль</a></li>
+						{% endif %}
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>

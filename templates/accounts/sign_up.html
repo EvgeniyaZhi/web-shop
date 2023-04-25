@@ -1,0 +1,67 @@
+{% extends '_layouts/base.html' %}
+
+{% block content %}
+    <div class="page-content">
+        <div class="section">
+			<div class="container">
+				<div class="row">
+					<!-- -------------------------------------------------------- -->
+                    <form id="form1" action="/accounts/sign_up" method="post">
+                        {% csrf_token %}
+                        <div class="form-floating">
+                            <label for="login">Логін:</label>
+                            <input type="text" class="form-control" id="login" required
+                                 name="login" placeholder="Введіть Ваш логін тут ...">
+                        </div>
+                        <div class="form-floating">
+                            <label for="pass1">Пароль:</label>
+                            <input type="password" class="form-control" id="pass1" required
+                                 name="pass1" placeholder="Введіть Ваш пароль тут ...">
+                        </div>
+                        <div class="form-floating">
+                            <label for="pass1">Підтвердження:</label>
+                            <input type="password" class="form-control" id="pass2" required
+                                 name="pass2" placeholder="Підтвердіть Ваш пароль тут ...">
+                        </div>
+                        <div class="form-floating">
+                            <label for="email">E-Mail:</label>
+                            <input type="email" class="form-control" id="email" required
+                                 name="email" placeholder="Введіть Ваш E-Mail тут ...">
+                        </div>
+                        <p>
+                            <button class="w-50 btn btn-primary" type="submit">Відправити</button>
+                        </p>
+                    </form>
+					<!-- -------------------------------------------------------- -->
+				</div>
+			</div>
+		</div>
+    </div>
+    <style>
+        #form1 {
+            width: 350px;
+            border: 1px solid silver;
+            border-radius: 15px;
+            padding: 25px 40px;
+            background: whitesmoke;
+            margin: auto;
+            box-shadow: 10px 10px 30px silver;
+        }
+        #form1 label {
+            color: darkcyan;
+            margin: 0;
+            font-style: italic;
+        }
+        #form1 .form-control {
+            margin-bottom: 5px;
+        }
+        #form1 .checkbox {
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        #form1 p {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+{% endblock %}
